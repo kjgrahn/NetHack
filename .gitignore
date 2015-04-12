@@ -1,54 +1,38 @@
-# CVS default ignores begin
-tags
 TAGS
-.make.state
-.nse_depinfo
-*~
-\#*
-.#*
-,*
-_$*
-*$
-*.old
-*.bak
-*.BAK
-*.orig
-*.rej
-.del-*
-*.a
-*.olb
 *.o
-*.obj
-*.so
-*.exe
-*.Z
-*.elc
-*.ln
-core
-# CVS default ignores end
-.*.swp
+*.a
+dep/
+nethack
+recover
+makedefs
+lev_comp
+dgn_comp
+tilemap
+*.lev
+levels.tar
+data.tar
 
-# We generate makefiles by shell script
-Makefile
+include/vis_tab.h
+include/pm.h
+include/onames.h
+include/date.h
+src/monstr.c
+src/tile.c
+src/vis_tab.c
 
-# Win32-specific ignores
-Debug/
-Release/
-binary/
-build/
-ipch/
-Nethack.sln
-Nethack.sdf
-Nethack.opensdf
-Makefile.bcc
-Makefile.gcc
-Makefile-orig
-Makefile.bcc-orig
-Makefile.gcc-orig
-*.suo
-*.pdb
-*.ilk
-# VS2013 extension to auto-whine about questionable code generates these
-*.lastcodeanalysissucceeded
-# Win32-specific ignores end
+dgn_comp.h
+dgn_lex.c
+dgn_yacc.c
+lev_comp.h
+lev_lex.c
+lev_yacc.c
 
+dat/options
+dat/data
+dat/dungeon
+dat/dungeon.pdf
+dat/oracles
+dat/quest.dat
+dat/rip.xpm
+dat/rumors
+dat/sysconf
