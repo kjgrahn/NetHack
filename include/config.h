@@ -43,7 +43,7 @@
 #if !defined(NOTTYGRAPHICS)
 #define TTY_GRAPHICS /* good old tty based graphics */
 #endif
-/* #define X11_GRAPHICS */   /* X11 interface */
+#define X11_GRAPHICS   /* X11 interface */
 /* #define QT_GRAPHICS */    /* Qt interface */
 /* #define GNOME_GRAPHICS */ /* Gnome interface */
 /* #define MSWIN_GRAPHICS */ /* Windows NT, CE, Graphics */
@@ -113,7 +113,7 @@
 #endif
 
 #ifndef DEFAULT_WINDOW_SYS
-#define DEFAULT_WINDOW_SYS "tty"
+# define DEFAULT_WINDOW_SYS "X11"
 #endif
 
 #ifdef X11_GRAPHICS
@@ -125,13 +125,10 @@
  * would allow:
  *  xpmtoppm <x11tiles.xpm | pnmscale 1.25 | ppmquant 90 >x11tiles_big.xpm
  */
-/* # define USE_XPM */ /* Disable if you do not have the XPM library */
-#ifdef USE_XPM
-#define GRAPHIC_TOMBSTONE /* Use graphical tombstone (rip.xpm) */
-#endif
-#ifndef DEFAULT_WC_TILED_MAP
-#define DEFAULT_WC_TILED_MAP /* Default to tiles */
-#endif
+# define USE_XPM		/* Disable if you do not have the XPM library */
+# ifdef USE_XPM
+#  define GRAPHIC_TOMBSTONE	/* Use graphical tombstone (rip.xpm) */
+# endif
 #endif
 
 /*
@@ -184,7 +181,7 @@
  */
 
 #ifndef WIZARD_NAME /* allow for compile-time or Makefile changes */
-#define WIZARD_NAME "wizard" /* value is ignored if SYSCF is enabled */
+#define WIZARD_NAME "grahn" /* value is ignored if SYSCF is enabled */
 #endif
 
 #ifndef SYSCF
@@ -214,13 +211,13 @@
  *      maximum number of scores to keep, for example) if SYSCF is enabled.
  */
 #ifndef PERSMAX
-#define PERSMAX 3 /* entries per name/uid per char. allowed */
+#define PERSMAX 10 /* entries per name/uid per char. allowed */
 #endif
 #ifndef POINTSMIN
 #define POINTSMIN 1 /* must be > 0 */
 #endif
 #ifndef ENTRYMAX
-#define ENTRYMAX 100 /* must be >= 10 */
+#define ENTRYMAX 300 /* must be >= 10 */
 #endif
 #ifndef PERS_IS_UID
 #if !defined(MICRO) && !defined(MAC) && !defined(WIN32)
@@ -250,11 +247,8 @@
 
 #if defined(UNIX) && !defined(ZLIB_COMP) && !defined(COMPRESS)
 /* path and file name extension for compression program */
-#define COMPRESS "/usr/bin/compress" /* Lempel-Ziv compression */
-#define COMPRESS_EXTENSION ".Z"      /* compress's extension */
-/* An example of one alternative you might want to use: */
-/* #define COMPRESS "/usr/local/bin/gzip" */ /* FSF gzip compression */
-/* #define COMPRESS_EXTENSION ".gz" */       /* normal gzip extension */
+#define COMPRESS "/bin/gzip"			/* FSF gzip compression */
+#define COMPRESS_EXTENSION ".gz"		/* normal gzip extension */
 #endif
 
 #ifndef COMPRESS
@@ -412,7 +406,7 @@ typedef unsigned char uchar;
  * functions that have been macroized.
  */
 
-/* #define VISION_TABLES */ /* use vision tables generated at compile time */
+#define VISION_TABLES   /* use vision tables generated at compile time */
 #ifndef VISION_TABLES
 #ifndef NO_MACRO_CPATH
 #define MACRO_CPATH /* use clear_path macros instead of functions */
