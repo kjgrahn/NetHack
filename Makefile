@@ -3,7 +3,7 @@
 # Copyright (c) 2013, 2015, 2016 Jörgen Grahn
 # All rights reserved.
 
-GAMEDIR=/usr/games
+GAMEDIR=/usr/local/nethack-3.6
 GAMEUID=games
 
 SHELL=/bin/bash

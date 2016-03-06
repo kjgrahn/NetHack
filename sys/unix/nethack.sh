@@ -1,7 +1,7 @@
 #!/bin/sh
 # NetHack 3.6  nethack.sh	$NHDT-Date: 1432512789 2015/05/25 00:13:09 $  $NHDT-Branch: master $:$NHDT-Revision: 1.17 $
 
-HACKDIR=/usr/games/lib/nethackdir
+HACKDIR=/usr/local/nethack-3.6/lib/nethackdir
 export HACKDIR
 HACK=$HACKDIR/nethack
 # NB: MAXNROFPLAYERS is deprecated in favor of MAXPLAYERS in SYSCF.
