@@ -128,7 +128,6 @@ int bkglyph UNUSED;
 #ifdef TEXTCOLOR
             if ((special & MG_PET) && iflags.hilite_pet)
                 color += CLR_MAX;
-            if ((special & MG_OBJPILE) && iflags.hilite_pile)
             *co_ptr = color;
 #endif
             if (!map_info->is_tile)
@@ -1530,7 +1529,7 @@ Widget parent;
                   sizeof(map_info->t_stop));
 
     /* we probably want to restrict this to the 1st map window only */
-    map_info->is_tile = (init_tiles(wp) && iflags.wc_tiled_map);
+    map_info->is_tile = (iflags.wc_tiled_map && init_tiles(wp));
     init_text(wp);
 
     /*
